@@ -6,3 +6,7 @@ CREATE TABLE Electronics(
     Price REAL,
     InStock INTEGER
 );
+
+-- Insert a new product
+INSERT INTO Electronics (Name, Category, Price, InStock)
+VALUES('MacBook Pro', 'Ноутбуки', 1999.99, 1);
