@@ -33,3 +33,18 @@ VALUES
 -- Order by descending
 SELECT * FROM Electronics
 ORDER BY Price DESC;
+
+-- Count the total number of electronics
+SELECT COUNT(*) FROM Electronics;
+
+-- Count the total price of electronics
+SELECT SUM(Price) FROM Electronics;
+
+-- Count the average price of electronics
+SELECT AVG(Price) FROM Electronics;
+
+-- Find the most cheap item in electronics
+SELECT MIN(Price) FROM Electronics;
+
+-- Find the most expensive item in electronics
+SELECT MAX(Price) FROM Electronics;
