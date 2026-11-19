@@ -48,3 +48,11 @@ SELECT MIN(Price) FROM Electronics;
 
 -- Find the most expensive item in electronics
 SELECT MAX(Price) FROM Electronics;
+
+-- Count an amount of items in each category
+SELECT Category, COUNT(*) FROM Electronics
+GROUP BY Category;
+
+-- Count a total and average price and find the most expensive and the most cheap item in each category
+SELECT Category, SUM(Price), AVG(Price), MAX(Price), MIN(Price) FROM Electronics
+GROUP BY Category;
