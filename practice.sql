@@ -56,3 +56,23 @@ GROUP BY Category;
 -- Count a total and average price and find the most expensive and the most cheap item in each category
 SELECT Category, SUM(Price), AVG(Price), MAX(Price), MIN(Price) FROM Electronics
 GROUP BY Category;
+
+-- Create a new table 
+CREATE TABLE Orders(
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    CustomerName TEXT NOT NULL,
+    ElectronicsId INTEGER,
+    Quantity INTEGER
+);
+
+-- Fill the new table 
+INSERT INTO Orders(CustomerName, ElectronicsId, Quantity)
+VALUES
+    ('Іван', 1, 1),
+    ('Марія', 3, 2),
+    ('Олег', 2, 1);
+
+-- Show the customer name, his order and count the total price of the order
+SELECT Orders.CustomerName, Electronics.Name, Electronics.Price * Orders.Quantity
+FROM Orders
+JOIN Electronics ON Orders.ElectronicsId = Electronics.Id;
