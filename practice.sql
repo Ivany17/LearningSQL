@@ -76,3 +76,17 @@ VALUES
 SELECT Orders.CustomerName, Electronics.Name, Electronics.Price * Orders.Quantity
 FROM Orders
 JOIN Electronics ON Orders.ElectronicsId = Electronics.Id;
+
+-- Add in Orders the product with the wrong Id
+INSERT INTO Orders(CustomerName, ElectronicsId, Quantity)
+VALUES ('Roberto', 99, 1);
+
+-- Use the LEFT JOIN to see the product with the wrong Id in the table
+SELECT Orders.CustomerName, Electronics.Name
+FROM Orders
+LEFT JOIN Electronics ON Orders.ElectronicsId = Electronics.Id;
+
+-- Use the RIGHT JOIN to show the whole list of the products even those that are not ordered
+SELECT Orders.CustomerName, Electronics.Name
+FROM Orders
+RIGHT JOIN Electronics ON Orders.ElectronicsId = Electronics.Id;
