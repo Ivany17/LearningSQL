@@ -90,3 +90,12 @@ LEFT JOIN Electronics ON Orders.ElectronicsId = Electronics.Id;
 SELECT Orders.CustomerName, Electronics.Name
 FROM Orders
 RIGHT JOIN Electronics ON Orders.ElectronicsId = Electronics.Id;
+
+-- Show the name and price from Electronics, but rename the columns and count the total price 
+SELECT Electronics.Name AS ProductName, Electronics.Price AS ProductPrice, Electronics.Price * Orders.Quantity AS TotalPrice
+FROM Electronics
+JOIN Orders ON Electronics.Id = Orders.ElectronicsId;
+
+-- Rename your table and show the name and price from Electronics AS e
+SELECT e.Name AS ProductName, e.Price AS ProductPrice
+FROM Electronics AS e;
