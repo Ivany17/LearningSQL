@@ -99,3 +99,12 @@ JOIN Orders ON Electronics.Id = Orders.ElectronicsId;
 -- Rename your table and show the name and price from Electronics AS e
 SELECT e.Name AS ProductName, e.Price AS ProductPrice
 FROM Electronics AS e;
+
+-- Change the Price of "Logitech MX Master 3" to 120.00
+UPDATE Electronics
+SET Price = 120.00
+WHERE Id = 5;
+
+-- Remove Roberto from Orders
+DELETE FROM Orders
+WHERE CustomerName = 'Roberto';
